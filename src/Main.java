@@ -1,15 +1,31 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+    public static class Personnage {
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        private String nom;
+        private String prenom;
+        private int age;
+
+        public Personnage(String nom, String prenom, int age) {
+            this.nom = nom;
+            this.prenom = prenom;
+            this.age = age;
         }
+        public void presenter() {
+            System.out.println("Je suis " + prenom + " " + nom + ", j'ai " + age + " ans.");
+        }
+
+        public int calculerAgeEnAnnee() {
+            return age;
+        }
+    }
+    public static void main(String[] args) {
+        Personnage personnage1 = new Personnage("Dupont", "Jean", 32);
+        personnage1.presenter(); // Affiche "Je suis Jean Dupont, j'ai 32 ans."
+
+        int ageEnAnnees = personnage1.calculerAgeEnAnnee();
+        System.out.println("Âge en années : " + ageEnAnnees);  // Affiche "Âge en années : 32"
+
     }
 }
